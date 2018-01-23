@@ -39,8 +39,39 @@ body {
 	opacity: 1;
 
 }
-.images{
-	margin: 0em;
+.imagesgit{
+	/*margin-right: 5em;*/
+	position: absolute;
+	right: 10em;
+	top: 3em;
+	overflow: hidden;
+	height: 40px;
+	width: 40px;
+	/*width: 5em;/**/
+	/*height: 5em;*/*/
+}
+.imagesgit img {
+	transition: transform 0.2s ease-in-out;
+}
+.imagesgit img:hover {
+	transform: translate3d(0px, -40px, 0px);
+}
+.imageslinkedin{
+	/*margin-right: 5em;*/
+	position: absolute;
+	right: 13.55em;
+	top: 3em;
+	overflow: hidden;
+	height: 40px;
+	width: 40px;
+	/*width: 5em;/**/
+	/*height: 5em;*/*/
+}
+.imageslinkedin img {
+	transition: transform 0.2s ease-in-out;
+}
+.imageslinkedin img:hover {
+	transform: translate3d(0px, -40px, 0px);
 }
 .card {
 	margin: 3em;
@@ -82,6 +113,18 @@ body {
 <p>
 Joe DeGrand<br />Software Engineering<br />Rochester Insitute Of Technology
 </p>
+<div class="imageslinkedin">
+<a href="https://www.linkedin.com/in/joe-degrand-377906152/">
+<img src="linkedinslider.png" width=40 height=80 right=100>
+</a>
+<!-- <img src="linkedin.png" width=40 height=40 right=100> -->
+</div>
+<div class="imagesgit">
+<a href="https://github.com/jdegrand">
+<img src="githubslider.png" width=40 height=80>
+</a>
+<!-- <img src="linkedin.png" width=40 height=40 right=100> -->
+</div>
 </div>
 <!-- <div class="media">
 <img src="GitHub.png" alt="GitHub">
