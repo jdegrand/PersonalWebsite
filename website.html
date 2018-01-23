@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript">
+</script>
+<head>
+<style>
+body {
+	margin: 0;
+	height: 100vh;
+	/*background: linear-gradient(to bottom, #1ABC9C 0px, #A01197 100%);*/
+	background-image: url("sea.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 0.1px;
+}
+.title {
+	padding: 3em;
+	margin-bottom: 10px;
+	color: white;
+	/*font-family: Lucida, Lucida, serif;*/
+	font-family: Verdana, Geneva, sans-serif;
+	position: fixed;
+	width: 100%;
+	background:inherit;
+	z-index: 10;
+}
+.media {
+	margin-right: 5em; 
+}
+.invisible {
+	/*height: 50em;*/
+	/*height: 100%;*/
+	height: 75vh;
+	/*background: green;*/
+	overflow: scroll;
+	position: relative;
+	opacity: 1;
+
+}
+.images{
+	margin: 0em;
+}
+.card {
+	margin: 3em;
+	/*height: 1em;*/
+	opacity: 0.70;
+	filter: alpha(opacity=70);
+	color: white;
+	background: black;
+	padding: 1em;
+	box-shadow: 0px 0px 8px 1px #000000;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1em;
+	top: 60%;
+}
+.card:hover {
+	opacity: 1.0;
+	filter: alpha(opacity=100);
+}
+.fillercard {
+	margin: 3em;
+	/*height: 1em;*/
+	color: white;
+	padding: 1em;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1em;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.headers {
+	font-weight: bold;
+	font-size: 1.5em;
+	color: white;
+}
+</style>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="title">
+<p>
+Joe DeGrand<br />Software Engineering<br />Rochester Insitute Of Technology
+</p>
+</div>
+<!-- <div class="media">
+<img src="GitHub.png" alt="GitHub">
+</div> -->
+<div class="invisible" id="blocks">
+<!-- <div class="images">
+<img src="sea.jpg" alt="Dab Meme">
+</div> -->
+<div class="fillercard">
+<div class="headers">
+<h>
+FILLER
+</h>
+</div>
+<p>FILLER</p>
+</div>
+<div class="card">
+<div class="headers">
+<h>
+About Me
+</h>
+</div>
+<p>Has some text inside</p>
+</div>
+<div class="card">
+<div class="headers">
+<h>
+Projects
+</h>
+</div>
+<p>More Text</p>
+</div>
+<div class="card">
+<div class="headers">
+<h>
+Free Time
+</h>
+</div>
+<p>More Text</p>
+</div>
+</div>
+</body>
+</html>
