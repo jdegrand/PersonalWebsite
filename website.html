@@ -2,6 +2,21 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript">
+	function arrowin() {
+		document.getElementById("arrows").style.opacity = "1";
+	}
+	function arrowout() {
+		document.getElementById("arrows").style.opacity = "0";
+	}
+	var back = false;
+	function projectsNext() {
+		document.getElementById("invisibleid").style.transform = "translate3d(-100%, 0px, 0px)";
+		document.getElementById("cardrightid").style.transform = "translate3d(-200%, 0px, 0px)";
+	}
+	function moverightcardback() {
+		document.getElementById("invisibleid").style.transform = "translate3d(0%, 0px, 0px)";
+		back = true;
+	}
 </script>
 <head>
 	<style>
@@ -28,149 +43,199 @@
 		color: white;
 		z-index: 10;
 	}
-.invisible {
-	height: 100vh;
-	width: 100%;
-	overflow: scroll;
-	position: relative;
-	opacity: 1;
-	z-index: 9;
-}
-.imagesgit {
-	position: fixed;
-	right: 5em;
-	top: 3em;
-	overflow: hidden;
-	height: 40px;
-	width: 40px;
-	z-index: 12;
-}
-.imagesgit img {
-	transition: transform 0.2s ease-in-out;
-}
-.imagesgit img:hover {
-	transform: translate3d(0px, -40px, 0px);
-}
-.imageslinkedin{
-	position: fixed;
-	right: 8.55em;
-	top: 3em;
-	overflow: hidden;
-	height: 40px;
-	width: 40px;
-	z-index: 12;
-}
-.imageslinkedin img {
-	transition: transform 0.2s ease-in-out;
-}
-.imageslinkedin img:hover {
-	transform: translate3d(0px, -40px, 0px);
-}
-.card {
-	margin: 3em;
-	opacity: 0.70;
-	filter: alpha(opacity=70);
-	color: white;
-	background: black;
-	padding: 1em;
-	box-shadow: 0px 0px 8px 1px #000000;
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 1em;
-	top: 60%;
-	width: 60vw;
-	-webkit-transition: width 0.5s;
-	transition: width 0.5s;
-}
-.card:hover {
-	opacity: 1.0;
-	width: 85vw;
-}
-.fillercard {
-	margin: 3em;
-	color: white;
-	padding: 1em;
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 1em;
-	opacity: 0;
-	filter: alpha(opacity=0);
-}
-.headers {
-	font-weight: bold;
-	font-size: 1.5em;
-	color: white;
-}
+	.invisible {
+		height: 100vh;
+		width: 100%;
+		overflow: scroll;
+		position: relative;
+		opacity: 1;
+		z-index: 9;
+		transition-timing-function: ease-in-out;
+		-moz-transition-timing-function: : ease-in-out;
+		-webkit-transition-timing-function: : ease-in-out;
+		--webkit-transition: all 1.5s;
+		-moz-transition: all 1.5s;
+		-o-transition: all 1.5s;
+		transition: all 1.5s;
+		margin-right: 100%
+	}
+	.imagesgit {
+		position: fixed;
+		right: 5em;
+		top: 3em;
+		overflow: hidden;
+		height: 40px;
+		width: 40px;
+		z-index: 12;
+	}
+	.imagesgit img {
+		transition: transform 0.2s ease-in-out;
+	}
+	.imagesgit img:hover {
+		transform: translate3d(0px, -40px, 0px);
+	}
+	.imageslinkedin{
+		position: fixed;
+		right: 8.55em;
+		top: 3em;
+		overflow: hidden;
+		height: 40px;
+		width: 40px;
+		z-index: 12;
+	}
+	.imageslinkedin img {
+		transition: transform 0.2s ease-in-out;
+	}
+	.imageslinkedin img:hover {
+		transform: translate3d(0px, -40px, 0px);
+	}
+	.card, .card2 {
+		margin: 3em;
+		opacity: 0.70;
+		filter: alpha(opacity=70);
+		color: white;
+		background: black;
+		padding: 1em;
+		box-shadow: 0px 0px 8px 1px #000000;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 1em;
+		top: 60%;
+		width: 60vw;
+		-webkit-transition: width 0.5s;
+		transition: width 0.5s;
+	}
+	.card:hover, .card2:hover {
+		opacity: 1.0;
+		width: 85vw;
+	}
+	.cardright {
+		position: absolute;
+		margin: 3em;
+		opacity: 0.70;
+		filter: alpha(opacity=70);
+		color: white;
+		background: black;
+		padding: 1em;
+		box-shadow: 0px 0px 8px 1px #000000;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 1em;
+		top: 60%;
+		width: 85vw;
+		transition-timing-function: ease-in-out;
+		-moz-transition-timing-function: ease-in-out;
+		-webkit-transition-timing-function: ease-in-out;
+		---webkit-transition-timing-function: ease-in-out;
+		-webkit-transition: left 1.5s;
+		--webkit-transition: left 1.5s;
+		-moz-transition: left 1.5s;
+		-o-transition: left 1.5s;
+		transition: left 1.5s;
+		margin-right: 100%;
+	}
+	.cardright:hover {
+		opacity: 1.0;
+	}
+	.fillercard {
+		margin: 3em;
+		color: white;
+		padding: 1em;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 1em;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+	.headers {
+		font-weight: bold;
+		font-size: 1.5em;
+		color: white;
+	}
+	#arrows {
+		opacity: 0;
+	}
+	#arrows img {
+		margin-right: 40px;
+		margin-left: -50px;
+		position: absolute;
+	}
+
 </style>
 </head>
 <body>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="title">
-	<p>
-		Joe DeGrand<br />Software Engineering<br />Rochester Insitute Of Technology
-	</p>
-</div>
-<div class="imageslinkedin">
-	<a href="https://www.linkedin.com/in/joe-degrand-377906152/">
-		<img src="linkedinslider.png" width=40 height=80 right=100>
-	</a>
-</div>
-<div class="imagesgit">
-	<a href="https://github.com/jdegrand">
-		<img src="githubslider.png" width=40 height=80>
-	</a>
-</div>
-<div class="invisible" id="blocks">
-<div class="fillercard">
-	<div class="headers">
-		<h>
-			FILLER
-		</h>
+	<div class="title">
+		<p>
+			Joe DeGrand<br />Software Engineering<br />Rochester Insitute Of Technology
+		</p>
+		<button type="button" onclick="moverightcardback()">Move Back!</button>
 	</div>
-	<p>FILLER</p>
-</div>
-<div class="card">
-	<div class="headers">
-		<h>
-			About Me
-		</h>
+	<div class="imageslinkedin">
+		<a href="https://www.linkedin.com/in/joe-degrand-377906152/">
+			<img src="linkedinslider.png" width=40 height=80 right=100>
+		</a>
 	</div>
-	<p>&nbsp; &nbsp; &nbsp; &nbsp; I am currently a first year Software Engineering major at Rochester Institute Of Technology. I love programming, learning more about technology in general, and especially modding video games. Hobbies include messing around with 3D models and game textures, video editing, and taking apart things to see how they work.</p>
-</div>
-<div class="card">
-	<div class="headers">
-		<h>
-			Projects
-		</h>
+	<div class="imagesgit">
+		<a href="https://github.com/jdegrand">
+			<img src="githubslider.png" width=40 height=80>
+		</a>
 	</div>
-	<p><ul>
-		<li>RFID Music Player</li>
-		<li>This website completely from scratch with no extra plug-ins</li>
-	</ul></p>
-</div>
-<div class="card">
-	<div class="headers">
-		<h>
-			Languages
-		</h>
-	</div>
-	<p>Strong Languages
-		<ul>
-			<li>Python</li>
-		</ul>
-	Learning
-<ul>
-	<li>Java</li>
-	<li>C</li>
-	<li>HTML / CSS</li>
-</ul></p>
-</div>
-<div class="card">
-	<div class="headers">
-		<h>
-			Free Time
-		</h>
-	</div>
-	<p>More Text</p>
-</div>
-</div>
-</body>
-</html>
+	<div class="invisible" id="invisibleid">
+		<div class="fillercard">
+			<div class="headers">
+				<h>
+					FILLER
+				</h>
+			</div>
+			<p>FILLER</p>
+		</div>
+		<div class="card">
+			<div class="headers">
+				<h>
+					About Me
+				</h>
+			</div>
+			<p>&nbsp; &nbsp; &nbsp; &nbsp; I am currently a first year Software Engineering major at Rochester Institute Of Technology. I love programming, learning more about technology in general, and especially modding video games. Hobbies include messing around with 3D models and game textures, video editing, and taking apart things to see how they work.</p>
+		</div>
+		<div class="card2" onmouseover="arrowin(this)" onmouseout="arrowout(this)" onclick="projectsNext()">
+			<div id="arrows">
+				<p align="right">
+					<img src="whitearrow.png" width=40 height=80>
+				</p>
+			</div>
+			<div class="headers">
+				<h>
+					Projects
+				</h>
+			</div>
+			<p><ul>
+				<li>RFID Music Player</li>
+				<li>This website completely from scratch with no extra plug-ins</li>
+			</ul></p>
+		</div>
+		<div class="card">
+			<div class="headers">
+				<h>
+					Languages
+				</h>
+			</div>
+			<p>Strong Languages
+				<ul>
+					<li>Python</li>
+				</ul>
+				Learning
+				<ul>
+					<li>Java</li>
+					<li>C</li>
+					<li>HTML / CSS</li>
+				</ul></p>
+			</div>
+			<div class="card">
+				<div class="headers">
+					<h>
+						Free Time
+					</h>
+				</div>
+				<p>More Text</p>
+			</div>
+		</div>
+	</body>
+	</html>
