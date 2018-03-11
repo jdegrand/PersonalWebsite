@@ -11,10 +11,11 @@
 	var back = false;
 	function projectsNext() {
 		document.getElementById("invisibleid").style.transform = "translate3d(-100%, 0px, 0px)";
-		document.getElementById("cardrightid").style.transform = "translate3d(-200%, 0px, 0px)";
+		document.getElementById("cardrightid").style.transform = "translate3d(-107%, 0px, 0px)";
 	}
 	function moverightcardback() {
 		document.getElementById("invisibleid").style.transform = "translate3d(0%, 0px, 0px)";
+		document.getElementById("cardrightid").style.transform = "translate3d(0%, 0px, 0px)";
 		back = true;
 	}
 </script>
@@ -29,14 +30,15 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		padding: 0.1px;
+		overflow-x: hidden;
 	}
 	.title {
 		padding: 3em;
 		padding-bottom: 1em;
 		margin-bottom: 5px;
-		margin-right: 1px
+		margin-right: 1px;
 		/*font-family: Lucida, Lucida, serif;*/
-		font-family: Verdana, Geneva, sans-serif;
+		/*font-family: Verdana, Geneva, sans-serif;*/
 		position: fixed;
 		width: 100%;
 		background:inherit;
@@ -110,27 +112,33 @@
 	}
 	.cardright {
 		position: absolute;
-		margin: 3em;
+		margin-left: 101%;
+		margin-bottom: 10%;
+		/*margin: 3em;*/
+		height: 55vh;
 		opacity: 0.70;
 		filter: alpha(opacity=70);
 		color: white;
 		background: black;
+		z-index: 30;
 		padding: 1em;
 		box-shadow: 0px 0px 8px 1px #000000;
 		font-family: Verdana, Geneva, sans-serif;
 		font-size: 1em;
-		top: 60%;
+		top: 30%;
 		width: 85vw;
 		transition-timing-function: ease-in-out;
 		-moz-transition-timing-function: ease-in-out;
 		-webkit-transition-timing-function: ease-in-out;
-		---webkit-transition-timing-function: ease-in-out;
-		-webkit-transition: left 1.5s;
-		--webkit-transition: left 1.5s;
-		-moz-transition: left 1.5s;
-		-o-transition: left 1.5s;
-		transition: left 1.5s;
-		margin-right: 100%;
+		--webkit-transition-timing-function: ease-in-out;
+		-webkit-transition: all 1.5s;
+		--webkit-transition: all 1.5s;
+		-moz-transition: all 1.5s;
+		-o-transition: all 1.5s;
+		transition: all 1.5s;
+
+		/*margin-right: 100%;*/
+
 	}
 	.cardright:hover {
 		opacity: 1.0;
@@ -166,7 +174,7 @@
 		<p>
 			Joe DeGrand<br />Software Engineering<br />Rochester Insitute Of Technology
 		</p>
-		<button type="button" onclick="moverightcardback()">Move Back!</button>
+		<!-- <button type="button" onclick="moverightcardback()">Move Back!</button> -->
 	</div>
 	<div class="imageslinkedin">
 		<a href="https://www.linkedin.com/in/joe-degrand-377906152/">
@@ -178,20 +186,28 @@
 			<img src="githubslider.png" width=40 height=80>
 		</a>
 	</div>
+	<div class="cardright" id="cardrightid" onclick="moverightcardback()">
+		<div class="headers">
+			VlocChain
+		</div>
+		<p>Started as an idea at BrickHack 4, my group and I thought of the idea of being able to have a video sharing platform that implements blockchain. After the hackathon, we thought this was a really cool project that we could do expand and a lot more with, so we decided to continue working on it now.</p>
+		<p href="www.github/com/VlocC/VlocChain/">Project GitHub</p>
+		
+		<div class="headers">
+			RFID Music Player
+		</div>
+		<p>RFID has something that has always seemed interesting to me, and I had never real knew much about it before this project. I wanted to see if I can assign different songs to play when swiping different RFID cards. Using a Raspberry Pi 3 with an RFID Module and a Python library, I was able to turn this into a reality. I started this project my first semester at RIT, when I didn't have much programming experience. Now that I have a bit more experience, I hope to add more to it in the future.  </p>
+	</div>
 	<div class="invisible" id="invisibleid">
 		<div class="fillercard">
 			<div class="headers">
-				<h>
-					FILLER
-				</h>
+				<h>FILLER</h>
 			</div>
 			<p>FILLER</p>
 		</div>
 		<div class="card">
 			<div class="headers">
-				<h>
-					About Me
-				</h>
+				<h>About Me</h>
 			</div>
 			<p>&nbsp; &nbsp; &nbsp; &nbsp; I am currently a first year Software Engineering major at Rochester Institute Of Technology. I love programming, learning more about technology in general, and especially modding video games. Hobbies include messing around with 3D models and game textures, video editing, and taking apart things to see how they work.</p>
 		</div>
@@ -202,20 +218,21 @@
 				</p>
 			</div>
 			<div class="headers">
-				<h>
-					Projects
-				</h>
+				<h>Projects</h>
 			</div>
 			<p><ul>
+				<li>VlocChain</li>
+			</ul>
+			<ul>
 				<li>RFID Music Player</li>
-				<li>This website completely from scratch with no extra plug-ins</li>
+			</ul>
+			<ul>
+				<li>This website completely from scratch</li>
 			</ul></p>
 		</div>
 		<div class="card">
 			<div class="headers">
-				<h>
-					Languages
-				</h>
+				<h>Languages</h>
 			</div>
 			<p>Strong Languages
 				<ul>
@@ -230,11 +247,9 @@
 			</div>
 			<div class="card">
 				<div class="headers">
-					<h>
-						Free Time
-					</h>
+					<h>Hobbies and Free Time</h>
 				</div>
-				<p>More Text</p>
+				<p>In my free time, I like to mod Super Smash Bros on the Wii U. Hobbies of mine include Running, video and picture editing, and trying customize or mod other things.</p>
 			</div>
 		</div>
 	</body>
